@@ -1,0 +1,32 @@
+<head>
+  <title>Professional Performance Manager</title>
+</head>
+
+<body>
+  {{> layout}}
+</body>
+
+<template name="layout">
+  <header id="pp-header" class="navbar navbar-inverse" role="banner">
+    <div id="login-wrapper">{{> loginButtons align="right"}}</div>
+    <div class="container">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="/">Professional Performance Manager</a>
+      </div>
+    </div>
+  </header>
+  <div id="content">
+    <div class="container">
+      {{> yield}}
+    </div>
+  </div>
+</template>
+
+<template name="home">
+  Schools:
+  <ul>
+    {{#each schools}}
+      <li class="btn btn-info">{{name}}</li>
+    {{/each}}
+  </ul>
+</template>
