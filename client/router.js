@@ -11,11 +11,9 @@ Router.map(function () {
   this.route('home', {
     path: '/',
     onBeforeAction: [
-      function () {
-        this.subscribe('schools').wait();
-      },
-
       function (pause) {
+        this.subscribe('organizations').wait();
+		this.subscribe('schools',Session.get('organization_id')).wait();
         // we're done waiting on all subs
         if (this.ready()) {
           NProgress.done(); 

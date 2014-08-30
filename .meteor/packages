@@ -5,10 +5,9 @@
 
 standard-app-packages
 stylus
-iron-router
 accounts-ui
 accounts-password
 bootstrap-3
 transactions
-iron-layout
 nprogress
+iron:router

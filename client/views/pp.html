@@ -3,7 +3,6 @@
 </head>
 
 <body>
-  {{> layout}}
 </body>
 
 <template name="layout">
@@ -23,10 +22,17 @@
 </template>
 
 <template name="home">
-  Schools:
-  <ul>
-    {{#each schools}}
-      <li class="btn btn-info">{{name}}</li>
-    {{/each}}
-  </ul>
+  <div id="context-chooser">
+    <ul>
+      {{#each organizations}}
+        <li class="{{#if selected 'organization'}}selected{{/if}} organization">{{name}}</li>
+      {{/each}}
+    </ul>
+    <hr />
+    <ul>
+      {{#each schools}}
+        <li class="{{#if selected 'school'}}selected{{/if}} school">{{name}}</li>
+      {{/each}}
+    </ul>
+  </div>
 </template>
